@@ -8,7 +8,7 @@ function App() {
         <header>
           <div className="heading">
             <p>random</p>
-            <span class="material-icons">autorenew</span>
+            <span id="autorenew" class="material-icons">autorenew</span>
           </div>
         </header>
         <main>

@@ -11,12 +11,15 @@
 
 header .heading{
   display: flex;
-  align-items:right;
+  align-items:center;
   justify-content: flex-end;
+  padding: 25px 5px;
+  cursor: pointer;
 }
 
 .heading p ,.heading span{
-  padding: 25px 5px;
+  font-size: 20px;
+  text-align: center;
 }
 
 main{
@@ -26,7 +29,8 @@ main{
 main .card{
   width: 60%;
   margin: 0 auto;
-  margin-left: 5px solid rgba(255, 255, 0, 0.747);
+  border-left: 5px solid rgba(255, 255, 0, 0.897);
+  padding-left :50px;
 }
 
 footer p{
