@@ -9,7 +9,10 @@ function App() {
     let url ="https://quote-garden.herokuapp.com/api/v3/quotes";
     axios.get(url,{
       params: {
-        limit:1
+        limit:1,
+        author: " ",
+        genere:" ",
+        page: 70918-Math.floor(Math.random()*10),
       }
     })
     .then(response => {
