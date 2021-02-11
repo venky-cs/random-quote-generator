@@ -1,11 +1,12 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
+import Header from './Header'
 
 function Author() {
     return (
-        <div>
+        <div className="container">
             <Link to='/'>
-            <button>X</button>
+               <Header />
             </Link>
         </div>
     )

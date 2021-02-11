@@ -7,7 +7,8 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import Author from './Author'
+import Header from './component/Header'
+import Author from './component/Author'
 
 function App() {
   const [state, setState] = useState(false)
@@ -37,12 +38,7 @@ function App() {
           <Route path="/" exact>
 
       <div className="container">
-        <header>
-          <div className="heading" onClick={updateState}>
-            <p>random</p>
-            <span id="autorenew" class="material-icons">autorenew</span>
-          </div>
-        </header>
+          <Header updateState={updateState}/>
         <main>
           <div className="card">
             {  data.length >= 1 &&
