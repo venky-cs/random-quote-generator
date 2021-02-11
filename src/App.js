@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 import Header from './component/Header'
 import Author from './component/Author'
+import Quote from './component/Quote'
 
 function App() {
   const [state, setState] = useState(false)
@@ -16,12 +17,15 @@ function App() {
   const [author,setAuthor] = useState("")
   useEffect(() => {
     let url ="https://quote-garden.herokuapp.com/api/v3/quotes";
+    let random = Math.floor(Math.random(2) * 100) * Math.floor(Math.random(7) * 100)
+    console.log(random,"max",random +7000 ,"----","min",random-7000)
     axios.get(url,{
       params: {
         limit:1,
-        author,
+        author: " ",
         genere:" ",
-        page: 70918-Math.floor(Math.random()*10),
+        page: random > 70918 ? 
+        random-70000 : random+7000,
       }
     })
     .then(response => {
@@ -39,6 +43,7 @@ function App() {
 
       <div className="container">
           <Header updateState={updateState}/>
+
         <main>
           <div className="card">
             {  data.length >= 1 &&
@@ -46,9 +51,7 @@ function App() {
               {
                 console.log('TestingData', quotes.quoteText);
                 return<>
-                <div className="quote" key={quotes.id}>
-                <p>{quotes.quoteText}</p>
-              </div>
+                <Quote quote={quotes}/>
               
               <Link to="/author">
 
@@ -71,7 +74,7 @@ function App() {
 
      
           <Route path="/author" exact>
-            <Author />
+            <Author authorName={author}/>
           </Route>
         </Switch>
       </Router>
