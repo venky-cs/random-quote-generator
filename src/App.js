@@ -38,10 +38,16 @@ function App() {
               data.map((quotes) => 
               {
                 console.log('TestingData', quotes.quoteText);
-                return(
+                return<>
                 <div className="quote" key={quotes.id}>
                 <p>{quotes.quoteText}</p>
-              </div>)
+              </div>
+
+                <div className="details">
+                  <h3>{quotes.quoteAuthor}</h3>
+                  <p>{quotes.quoteGenre}</p>
+                </div>
+              </>
             })}
           </div>
         </main>
