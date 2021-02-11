@@ -1,19 +1,45 @@
+import React,{useState,useEffect} from 'react';
 import './App.css';
+import axios from 'axios';
 
 function App() {
+  const [state, setState] = useState(false)
+  const [data,setData] = useState([])
+  useEffect(() => {
+    let url ="https://quote-garden.herokuapp.com/api/v3/quotes";
+    axios.get(url,{
+      params: {
+        limit:1
+      }
+    })
+    .then(response => {
+      console.log("Response",response);
+      setData(response.data.data)
+      console.log('Data',data)
+    })
+    .catch((error) => console.log(error))
+  }, [,state])
   return (
     <div className="App">
       <div className="container">
 
         <header>
-          <div className="heading">
+          <div className="heading" onClick={updateState}>
             <p>random</p>
             <span id="autorenew" class="material-icons">autorenew</span>
           </div>
         </header>
         <main>
           <div className="card">
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed aperiam veniam iusto eaque labore reiciendis quod atque natus reprehenderit optio! Eos delectus cupiditate possimus, id totam obcaecati voluptate voluptas ad explicabo nihil repudiandae temporibus adipisci vero sit aspernatur. Ex dolor voluptates repudiandae incidunt quisquam iste impedit ipsam veniam ad qui.</p>
+            {  data.length >= 1 &&
+              data.map((quotes) => 
+              {
+                console.log('TestingData', quotes.quoteText);
+                return(
+                <div className="quote" key={quotes.id}>
+                <p>{quotes.quoteText}</p>
+              </div>)
+            })}
           </div>
         </main>
         <footer>
@@ -22,6 +48,10 @@ function App() {
       </div>
     </div>
   );
+
+  function updateState(){
+    setState((prevState) => !prevState)
+  }
 }
 
 export default App;
