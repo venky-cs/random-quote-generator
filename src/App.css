@@ -32,12 +32,32 @@ main .card{
 }
 
 .card .quote{
-  border-left: 5px solid rgba(255, 255, 0, 0.897);
+  border-left: 5px solid #f7df94;
   padding-left :50px;
 }
 
 .card .details{
-  padding:50px;
+  margin:50px;
+  padding: 25px 0;
+  display: flex;
+  justify-content:space-between;
+}
+
+.card .details div{
+  padding: 15px;
+}
+
+.card .details div:nth-child(2){
+  color: white;
+}
+
+.card .details:hover{
+  background:#333333;
+  color: #fff;
+}
+
+#link{
+  text-decoration: none;
 }
 
 footer p{

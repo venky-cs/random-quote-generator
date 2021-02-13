@@ -25,7 +25,7 @@ function Author({authorName}) {
     }, [])
     return (
         <div className="container">
-            <Link to='/'>
+            <Link to='/' id="link">
                <Header />
 
                <div className="card">

@@ -53,13 +53,18 @@ function App() {
                 return<>
                 <Quote quote={quotes}/>
               
-              <Link to="/author">
+              <Link to="/author" id="link">
 
                 <div className="details" onClick={() =>{
                   setAuthor(quotes.quoteAuthor)
                 }}>
+                  <div>
                   <h3>{quotes.quoteAuthor}</h3>
                   <p>{quotes.quoteGenre}</p>
+                  </div>
+                      <div><span class="material-icons">
+                        trending_flat
+                      </span></div>
                 </div>
               </Link>
               </>
