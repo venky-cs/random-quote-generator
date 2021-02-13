@@ -17,9 +17,9 @@ function Author({authorName}) {
             }
         })
             .then(response => {
-                console.log("Response", response);
+                // console.log("Response", response);
                 setData(response.data.data)
-                console.log('Data', data)
+                // console.log('Data', data)
             })
             .catch((error) => console.log(error))
     }, [])
