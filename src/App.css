@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Raleway:wght@500;700&display=swap');
 *{
   margin: 0;
   padding: 0;
@@ -17,13 +18,16 @@ header .heading{
   cursor: pointer;
 }
 
-.heading p ,.heading span{
-  font-size: 20px;
+.heading p {
+  font-size: 18px;
   text-align: center;
+  font-family: 'Raleway',
+  sans-serif;
+  font-weight: 500;
 }
 
 main{
-  margin: 20% 0;
+  margin: 10% 0;
 }
 
 main .card{
@@ -36,6 +40,24 @@ main .card{
   padding-left :50px;
 }
 
+.quote p{
+  font-family: 'Raleway',
+  sans-serif;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 33.2px;
+  padding-bottom:25px;
+}
+
+.card > h3{
+  font-family: 'Raleway',
+  sans-serif;
+  font-weight:700;
+  font-size: 36px;
+  line-height:42.26px;
+  padding-bottom: 20px;
+}
+
 .card .details{
   margin:50px;
   padding: 25px 0;
@@ -46,9 +68,27 @@ main .card{
 .card .details div{
   padding: 15px;
 }
+.details div:first-child() h3{
+  font-family: 'Raleway',
+  sans-serif;
+  font-weight:700;
+  font-size: 24px;
+  line-height:28.18px
+}
+.details div:first-child() p{
+  font-family: 'Raleway',
+  sans-serif;
+  font-weight:500;
+  font-size: 14px;
+  color: #828282;
+  line-height:16.44px;
+}
 
 .card .details div:nth-child(2){
-  color: white;
+  color: #F2F2F2;
+  width: 25.33px;
+  height: 12.67px;
+  padding-right: 50px;
 }
 
 .card .details:hover{
@@ -58,8 +98,14 @@ main .card{
 
 #link{
   text-decoration: none;
+  color: black;
 }
 
 footer p{
+  font-family: 'Montserrat',
+  sans-serif;
+  font-weight: 600;
+  font-size: 14px;
   text-align: center;
+  color: #A9A9A9;
 }
