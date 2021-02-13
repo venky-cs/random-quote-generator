@@ -109,3 +109,23 @@ footer p{
   text-align: center;
   color: #A9A9A9;
 }
+
+@media only screen and (max-width:500px){
+  main,main .card{
+    width: 100%;
+  }
+  main{
+    margin-top:55px;
+  }
+  .quote p{
+    font-size: 20px;
+  }
+  footer p{
+   clear: both;
+   position: relative;
+   margin-bottom: -500px;
+  }
+  .card >h3{
+    font-size: 30px;
+  }
+}
