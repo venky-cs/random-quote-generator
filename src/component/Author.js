@@ -24,23 +24,26 @@ function Author({authorName}) {
             .catch((error) => console.log(error))
     }, [])
     return (
-        <div className="container">
-            <Link to='/' id="link">
-               <Header />
-
-               <div className="card">
-                   <h3>{author}</h3>
-                   {data.map((quote) => {
-                       return (<>
-                       <Quote quote={quote}/>
-                       <br/>
-                       </>
-                       )
-                   })}
-               </div>
-            </Link>
-        </div>
-    )
+      <div className="container">
+        <Link to="/" id="link">
+          <Header />
+        {  data.length >= 1 ?
+          <div className="card">
+            <h3>{author}</h3>
+            {data.map((quote) => {
+              return (
+                <>
+                  <Quote quote={quote} />
+                  <br />
+                </>
+              );
+            })}
+          </div>
+          :<h3>Loading...</h3>
+}
+        </Link>
+      </div>
+    );
 }
 
 export default Author

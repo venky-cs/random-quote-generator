@@ -34,55 +34,63 @@ function App() {
       // console.log('Data',data)
     })
     .catch((error) => console.log(error))
-  }, [,state])
+  }, [state])
   return (
     <div className="App">
       <Router>
         <Switch>
           <Route path="/" exact>
+            <div className="container">
+              <Header updateState={updateState} />
 
-      <div className="container">
-          <Header updateState={updateState}/>
+              {data.length >= 1 ? (
+                <main>
+                  <div className="card">
+                    {data.length >= 1 &&
+                      data.map((quotes) => {
+                        console.log('TestingData', quotes.quoteText);
+                        return (
+                          <>
+                            <Quote quote={quotes} />
 
-        <main>
-          <div className="card">
-            {  data.length >= 1 &&
-              data.map((quotes) => 
-              {
-                console.log('TestingData', quotes.quoteText);
-                return<>
-                <Quote quote={quotes}/>
-              
-              <Link to="/author" id="link">
-
-                <div className="details" onClick={() =>{
-                  setAuthor(quotes.quoteAuthor)
-                }}>
-                  <div>
-                  <h3>{quotes.quoteAuthor}</h3>
-                  <p>{quotes.quoteGenre}</p>
+                            <Link to="/author" id="link">
+                              <div
+                                className="details"
+                                onClick={() => {
+                                  setAuthor(quotes.quoteAuthor);
+                                }}
+                              >
+                                <div>
+                                  <h3>{quotes.quoteAuthor}</h3>
+                                  <p>{quotes.quoteGenre}</p>
+                                </div>
+                                <div>
+                                  <span class="material-icons">
+                                    trending_flat
+                                  </span>
+                                </div>
+                              </div>
+                            </Link>
+                          </>
+                        );
+                      })}
                   </div>
-                      <div><span class="material-icons">
-                        trending_flat
-                      </span></div>
-                </div>
-              </Link>
-              </>
-            })}
-          </div>
-        </main>
-        <footer>
-          <p>venky-cs @ DevChallenges.io</p>
-        </footer>
-      </div>
-            </Route>
+                </main>
+              ) : (
+                <h3>Loading...</h3>
+              )}
+            </div>
+          </Route>
 
-     
           <Route path="/author" exact>
-            <Author authorName={author}/>
+            <Author authorName={author} />
           </Route>
         </Switch>
       </Router>
+
+      <footer>
+        <p>venky-cs @ DevChallenges.io</p>
+      </footer>
     </div>
   );
 
