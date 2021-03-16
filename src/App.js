@@ -78,8 +78,11 @@ function App() {
                   </div>
                 </main>
               ) : (
-                <ScaleLoader/>
+                <ScaleLoader />
               )}
+              <footer>
+                <p>venky-cs @ DevChallenges.io</p>
+              </footer>
             </div>
           </Route>
 
@@ -88,10 +91,6 @@ function App() {
           </Route>
         </Switch>
       </Router>
-
-      <footer>
-        <p>venky-cs @ DevChallenges.io</p>
-      </footer>
     </div>
   );
 

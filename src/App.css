@@ -4,9 +4,13 @@
   padding: 0;
   box-sizing: border-box;
 }
+.App{
+  height: 100vh;
+}
 
 .container{
   width: 80%;
+  height: 80vh;
   margin: 0 auto;
 }
 
@@ -27,7 +31,9 @@ header .heading{
 }
 
 main{
-  margin:20% 0 auto;
+  display:grid;
+  place-items: center;
+  height: 100%;
 }
 
 main .card{
@@ -108,25 +114,21 @@ footer p{
   font-size: 14px;
   text-align: center;
   color: #A9A9A9;
-  position: relative;
+  width: 80%;
+  position: absolute;
   bottom: 0;
   padding: 50px 20px;
-  width: 100%;
 }
 
 @media only screen and (max-width:500px){
   main,main .card{
     width: 100%;
   }
-  main{
-    margin-top:50%;
-  }
   .quote p{
-    font-size: 12px;
+    font-size: 16px;
     line-height: 20.2px;
   }
-  
   h3{
-    font-size: 15px !important;
+    font-size: 18px !important;
   }
 }
