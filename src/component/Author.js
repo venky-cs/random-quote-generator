@@ -4,6 +4,7 @@ import Header from './Header'
 import Quote from './Quote'
 
 import axios from 'axios'
+import HashLoader from 'react-spinners/HashLoader';
 
 function Author({authorName}) {
     const [author, setAuthor] = useState(authorName);
@@ -39,7 +40,7 @@ function Author({authorName}) {
               );
             })}
           </div>
-          :<h3>Loading...</h3>
+          :<HashLoader />
 }
         </Link>
       </div>

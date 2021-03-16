@@ -10,6 +10,7 @@ import {
 import Header from './component/Header'
 import Author from './component/Author'
 import Quote from './component/Quote'
+import ScaleLoader from 'react-spinners/ScaleLoader';
 
 function App() {
   const [state, setState] = useState(false)
@@ -77,7 +78,7 @@ function App() {
                   </div>
                 </main>
               ) : (
-                <h3>Loading...</h3>
+                <ScaleLoader/>
               )}
             </div>
           </Route>
