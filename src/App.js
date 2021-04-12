@@ -19,7 +19,7 @@ function App() {
   useEffect(() => {
     let url ="https://quote-garden.herokuapp.com/api/v3/quotes";
     let random = Math.floor(Math.random(2) * 100) * Math.floor(Math.random(7) * 100)
-    // console.log(random,"max",random +7000 ,"----","min",random-7000)
+  
     axios.get(url,{
       params: {
         limit:1,
